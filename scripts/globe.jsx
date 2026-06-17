@@ -6,13 +6,11 @@
 // Exports (to window): GlobeIntro.
 
 function GlobeIntro() {
-  const wrapRef = React.useRef(null);
   const canvasRef = React.useRef(null);
   const progRef = React.useRef(0);
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
-    const wrap = wrapRef.current;
     if (!canvas) return;
 
     let globe = null;
@@ -31,9 +29,7 @@ function GlobeIntro() {
     const startTheta = 0.18;
 
     function sizePx() {
-      // Smaller footprint with generous margin so the sphere never clips at
-      // the viewport edge in fullscreen, even at the largest push-in.
-      return Math.min(window.innerWidth, window.innerHeight) * 0.55;
+      return Math.min(window.innerWidth, window.innerHeight) * 0.68;
     }
 
     function build() {
@@ -58,10 +54,7 @@ function GlobeIntro() {
         markers: [{ location: CHI, size: 0.1 }],
         onRender: (state) => {
           const p = progRef.current;
-          // Journey completes (locks onto Chicago) at 70% of the hero scroll,
-          // then holds — it never zooms all the way in.
           const jp = Math.min(1, p / 0.7);
-          // Gentle idle spin only while at the very top.
           if (p < 0.04) rotation += 0.0035;
           const base = startPhi + rotation;
           state.phi = base + (focus[0] - base) * jp;
@@ -83,7 +76,7 @@ function GlobeIntro() {
           clearInterval(iv);
           if (!destroyed) build();
         } else if (++tries > 120) {
-          clearInterval(iv); // ~12s — give up silently
+          clearInterval(iv);
         }
       }, 100);
       window.addEventListener(
@@ -98,14 +91,11 @@ function GlobeIntro() {
       const vh = window.innerHeight || 1;
       const p = Math.max(0, Math.min(1, window.scrollY / (vh * 0.9)));
       progRef.current = p;
-      if (!wrap) return;
-      // Modest push-in only (caps ~1.5x): settles on Chicago, no full zoom.
-      const scale = 1 + Math.min(p / 0.7, 1) * 0.25;
-      // Fade out earlier so there's a clear buffer before the lake photo.
+      const scale = 1 + Math.min(p / 0.7, 1) * 0.2;
       const fade = p < 0.45 ? 1 : Math.max(0, 1 - (p - 0.45) / 0.28);
-      wrap.style.transform = "scale(" + scale.toFixed(3) + ")";
-      wrap.style.opacity = String(fade);
-      wrap.style.visibility = fade <= 0.01 ? "hidden" : "visible";
+      canvas.style.transform = "translate(-50%, -50%) scale(" + scale.toFixed(3) + ")";
+      canvas.style.opacity = String(fade);
+      canvas.style.visibility = fade <= 0.01 ? "hidden" : "visible";
     }
 
     function onResize() {
@@ -132,26 +122,19 @@ function GlobeIntro() {
   }, []);
 
   return (
-    <div
-      ref={wrapRef}
+    <canvas
+      ref={canvasRef}
       aria-hidden="true"
       style={{
         position: "fixed",
-        inset: 0,
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
         zIndex: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden",
         pointerEvents: "none",
         willChange: "transform, opacity",
       }}
-    >
-      <canvas
-        ref={canvasRef}
-        style={{ width: "58vmin", height: "58vmin", maxWidth: "720px", maxHeight: "720px", aspectRatio: "1" }}
-      ></canvas>
-    </div>
+    />
   );
 }
 
