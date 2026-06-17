@@ -56,7 +56,7 @@ function About() {
             src="./Headshot.jpeg"
             placeholder="Your portrait"
             class="frame"
-            style={{ display: "block", width: "100%", maxWidth: "300px", aspectRatio: "2 / 3", borderRadius: "28px" }}
+            style={{ display: "block", width: "100%", maxWidth: "300px", height: "auto", aspectRatio: "2 / 3", borderRadius: "28px" }}
           ></image-slot>
         </div>
 
