@@ -29,7 +29,7 @@ function GlobeIntro() {
     const startTheta = 0.18;
 
     function sizePx() {
-      return Math.min(window.innerWidth, window.innerHeight) * 0.68;
+      return Math.min(window.innerWidth * 0.8, window.innerHeight * 0.8);
     }
 
     function build() {
@@ -91,9 +91,8 @@ function GlobeIntro() {
       const vh = window.innerHeight || 1;
       const p = Math.max(0, Math.min(1, window.scrollY / (vh * 0.9)));
       progRef.current = p;
-      const scale = 1 + Math.min(p / 0.7, 1) * 0.2;
       const fade = p < 0.45 ? 1 : Math.max(0, 1 - (p - 0.45) / 0.28);
-      canvas.style.transform = "translate(-50%, -50%) scale(" + scale.toFixed(3) + ")";
+      canvas.style.transform = "translate(-50%, -50%)";
       canvas.style.opacity = String(fade);
       canvas.style.visibility = fade <= 0.01 ? "hidden" : "visible";
     }
