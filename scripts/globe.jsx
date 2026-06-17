@@ -132,6 +132,11 @@ function GlobeIntro() {
         zIndex: 0,
         pointerEvents: "none",
         willChange: "transform, opacity",
+        // The cobe glow halo extends to the canvas edges and gets clipped into
+        // a hard square. Fade the canvas to transparent in a circle so the
+        // square corners disappear and the glow blends into the background.
+        WebkitMaskImage: "radial-gradient(circle closest-side, #000 80%, transparent 100%)",
+        maskImage: "radial-gradient(circle closest-side, #000 80%, transparent 100%)",
       }}
     />
   );
