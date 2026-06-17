@@ -4,7 +4,6 @@
 function Hero({ eyebrow, name, sub }) {
   return (
     <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-7 pb-40 pt-32 md:px-20" data-screen-label="Hero">
-      <GlobeIntro />
       <div className="relative z-10 mx-auto w-full max-w-6xl">
         <p className="eyebrow" data-reveal data-reveal-y="20">{eyebrow}</p>
         <h1 className="display-xl mt-6">

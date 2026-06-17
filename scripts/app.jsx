@@ -125,6 +125,7 @@ function App() {
 
   return (
     <div className="relative">
+      <GlobeIntro />
       <TopBar mode={mode} setMode={changeMode} />
 
       <main key={mode}>

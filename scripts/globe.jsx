@@ -136,7 +136,7 @@ function GlobeIntro() {
       ref={wrapRef}
       aria-hidden="true"
       style={{
-        position: "absolute",
+        position: "fixed",
         inset: 0,
         zIndex: 0,
         display: "flex",
