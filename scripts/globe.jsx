@@ -33,7 +33,7 @@ function GlobeIntro() {
     function sizePx() {
       // Smaller footprint with generous margin so the sphere never clips at
       // the viewport edge in fullscreen, even at the largest push-in.
-      return Math.min(window.innerWidth, window.innerHeight) * 0.72;
+      return Math.min(window.innerWidth, window.innerHeight) * 0.55;
     }
 
     function build() {
@@ -100,7 +100,7 @@ function GlobeIntro() {
       progRef.current = p;
       if (!wrap) return;
       // Modest push-in only (caps ~1.5x): settles on Chicago, no full zoom.
-      const scale = 1 + Math.min(p / 0.7, 1) * 0.5;
+      const scale = 1 + Math.min(p / 0.7, 1) * 0.25;
       // Fade out earlier so there's a clear buffer before the lake photo.
       const fade = p < 0.45 ? 1 : Math.max(0, 1 - (p - 0.45) / 0.28);
       wrap.style.transform = "scale(" + scale.toFixed(3) + ")";
