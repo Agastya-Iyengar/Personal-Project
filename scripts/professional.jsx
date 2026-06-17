@@ -98,7 +98,7 @@ function ProfessionalContent() {
                 </p>
               </div>
               <div className="flex items-end">
-                <a href="./TurnUP Reproductive rights.pdf" target="_blank" rel="noopener"
+                <a href="./TurnUP Reproductive rights copy.pdf" target="_blank" rel="noopener"
                    className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-[#fbf8f1] transition-transform hover:-translate-y-0.5"
                    style={{ background: "var(--ink-deep)", whiteSpace: "nowrap" }}>
                   Read Paper
