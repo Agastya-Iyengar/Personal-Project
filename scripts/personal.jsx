@@ -114,7 +114,7 @@ function PersonalContent() {
       <Hero
         eyebrow="Metea Valley · Class of 2028"
         name="Agastya Iyengar"
-        sub="Math, Policy, and code: Arm and arm, they produce a charm."
+        sub="Math, policy, and code: arm in arm, they produce a charm."
       />
       <LakeBand />
       <SectionRule />
