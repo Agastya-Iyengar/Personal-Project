@@ -76,36 +76,37 @@
     will-change: transform;
   }
 
-  /* Typography system — a deliberately tight scale.
-     Three content sizes only: the name (display-xl), every heading
-     (display), and all body copy (lede + body-lg share one size).
-     The eyebrow kicker and caption are fixed micro-trim, not scale steps. */
+  /* Typography system */
   .eyebrow {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.34em;
     color: var(--accent);
   }
   .display-xl {
-    font-size: clamp(56px, 8.5vw, 132px);
+    font-size: clamp(58px, 11vw, 168px);
     font-weight: 500;
-    line-height: 0.95;
-    letter-spacing: -0.015em;
+    line-height: 0.92;
+    letter-spacing: -0.012em;
     color: var(--ink-deep);
   }
   .display {
-    font-size: clamp(30px, 3.6vw, 46px);
+    font-size: clamp(38px, 6vw, 76px);
     font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
+    line-height: 1.0;
+    letter-spacing: -0.008em;
     color: var(--ink-deep);
   }
-  .lede,
-  .body-lg {
-    font-size: 19px;
+  .lede {
+    font-size: clamp(21px, 2.5vw, 30px);
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .body-lg {
+    font-size: 20px;
+    line-height: 1.78;
     color: var(--ink);
   }
   .caption { font-size: 14px; font-style: italic; color: var(--stone); }
