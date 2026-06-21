@@ -20,8 +20,7 @@ function ProOverview() {
         <BlurText as="h2" text="Overview & Skills" className="display mt-5 max-w-[16ch]" />
         <p className="lede mt-9 max-w-[46ch]" data-reveal data-reveal-y="28">
           A rising junior at Metea Valley with interests across mathematics,
-          debate, and policy — currently training the predictive algorithm for
-          Project&nbsp;1.
+          debate, and policy — looking to build the Agent in Project&nbsp;1.
         </p>
 
         <div className="mt-16 grid gap-px overflow-hidden rounded-[28px] sm:grid-cols-3" data-reveal data-reveal-y="34"
