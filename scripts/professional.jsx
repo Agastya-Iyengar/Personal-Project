@@ -27,8 +27,8 @@ function ProOverview() {
              style={{ background: "var(--line)" }}>
           {stats.map(([label, value]) => (
             <div key={label} className="px-7 py-9" style={{ background: "var(--bg-grad)" }}>
-              <p className="eyebrow text-[11px]">{label}</p>
-              <p className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)]">{value}</p>
+              <p className="eyebrow">{label}</p>
+              <p className="display leading-tight">{value}</p>
             </div>
           ))}
         </div>
@@ -40,8 +40,8 @@ function ProOverview() {
               <div key={s.area} data-reveal data-reveal-y="32">
                 <div className="lift grid grid-cols-1 gap-3 rounded-[28px] px-3 py-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1.4fr)] md:gap-10 md:px-7">
                   <div>
-                    <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-none text-[color:var(--ink-deep)]">{s.area}</h3>
-                    <p className="eyebrow mt-3 text-[11px]">{s.from}</p>
+                    <h3 className="display leading-none">{s.area}</h3>
+                    <p className="eyebrow mt-3">{s.from}</p>
                   </div>
                   <p className="body-lg text-[color:var(--stone)]">{s.detail}</p>
                 </div>
@@ -87,8 +87,8 @@ function ProfessionalContent() {
             <div className="lift grid grid-cols-1 gap-6 rounded-[34px] px-9 py-10 md:grid-cols-[minmax(0,1fr)_auto]"
                  style={{ boxShadow: "var(--shadow-soft)" }}>
               <div>
-                <p className="eyebrow text-[11px]">Policy · TurnUP</p>
-                <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)] mt-3">
+                <p className="eyebrow">Policy · TurnUP</p>
+                <h3 className="display leading-tight mt-3">
                   California Proposition 1 — Reproductive Rights Analysis
                 </h3>
                 <p className="body-lg mt-4 max-w-[56ch] text-[color:var(--stone)]">

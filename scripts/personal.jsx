@@ -11,11 +11,11 @@ function Hero({ eyebrow, name, sub }) {
         </h1>
         <div className="mt-10 flex items-center gap-6" data-reveal data-reveal-y="22">
           <span className="block h-px w-16 bg-[var(--accent)] opacity-70"></span>
-          <p className="caption text-base not-italic tracking-[0.04em]">{sub}</p>
+          <p className="caption not-italic tracking-[0.04em]">{sub}</p>
         </div>
       </div>
       <div className="pointer-events-none absolute bottom-28 left-1/2 z-10 -translate-x-1/2 text-center">
-        <p className="eyebrow text-[11px] opacity-70">Scroll</p>
+        <p className="eyebrow opacity-70">Scroll</p>
         <span className="mx-auto mt-3 block h-10 w-px bg-[var(--accent)] opacity-50"></span>
       </div>
     </section>
@@ -96,7 +96,7 @@ function Pursuits() {
             <div key={r.name} data-reveal data-reveal-y="34">
               <div className="lift group grid grid-cols-1 items-baseline gap-3 rounded-[28px] px-3 py-8 md:grid-cols-[80px_minmax(0,1fr)_minmax(0,2fr)] md:gap-10 md:px-7">
                 <span className="font-display text-lg text-[color:var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="font-display text-[clamp(28px,3.4vw,42px)] font-medium leading-none text-[color:var(--ink-deep)]">{r.name}</h3>
+                <h3 className="display leading-none">{r.name}</h3>
                 <p className="body-lg text-[color:var(--stone)]">{r.note}</p>
               </div>
               <hr className="rule" />

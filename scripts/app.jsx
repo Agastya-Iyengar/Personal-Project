@@ -134,7 +134,7 @@ function App() {
         <footer className="px-7 pb-40 pt-10 md:px-20">
           <div className="mx-auto w-full max-w-6xl">
             <hr className="rule-accent" />
-            <p className="caption mt-6 not-italic text-[15px]">
+            <p className="caption mt-6 not-italic">
               Agastya Iyengar &nbsp;·&nbsp; Metea Valley High School &nbsp;·&nbsp; MMXXVI
             </p>
           </div>

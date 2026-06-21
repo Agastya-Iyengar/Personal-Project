@@ -116,7 +116,7 @@ function MessageModal({ onClose }) {
         {!sent ? (
           <React.Fragment>
             <p className="eyebrow">Say hello</p>
-            <h3 className="display mt-3" style={{ fontSize: "clamp(34px,5vw,52px)" }}>Send a message</h3>
+            <h3 className="display mt-3">Send a message</h3>
             <p className="body-lg mt-3 text-[color:var(--stone)]">
               A note, a question, an introduction — it all reaches me.
             </p>
@@ -152,7 +152,7 @@ function MessageModal({ onClose }) {
         ) : (
           <div className="py-6 text-center">
             <p className="eyebrow">Received</p>
-            <h3 className="display mt-4" style={{ fontSize: "clamp(32px,5vw,48px)" }}>Thank you, {form.name.split(" ")[0]}.</h3>
+            <h3 className="display mt-4">Thank you, {form.name.split(" ")[0]}.</h3>
             <p className="lede mt-5 text-[color:var(--stone)]">
               Your message is noted — I'll be in touch. In the meantime, find me on
               Instagram or TikTok below.
@@ -183,7 +183,7 @@ function ContactBar() {
                borderColor: "var(--line)"
              }}>
           <span className="hidden pl-5 pr-4 md:block">
-            <span className="eyebrow text-[11px]">Contact</span>
+            <span className="eyebrow">Contact</span>
           </span>
           <div className="flex items-center" style={{ borderColor: "var(--line)" }}>
             <ContactItem href="https://www.instagram.com/agastya__i/" icon={<IgIcon />} label="Instagram" />
