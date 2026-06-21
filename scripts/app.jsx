@@ -74,26 +74,37 @@ function App() {
     r.style.setProperty("--stone",     t.textMuted);
   }, [t.accent, t.mood, t.textHead, t.textBody, t.textMuted]);
 
-  // Faint shadow that trails the cursor.
+  // A faint shadow (heavy lag) and a small accent dot (slight lag) trail the
+  // cursor. Two lerp factors give the layered, parallax-like feel.
   React.useEffect(() => {
     const g = document.getElementById("cursor-glow");
-    if (!g) return;
+    const d = document.getElementById("cursor-dot");
+    if (!g && !d) return;
     let raf = 0;
-    let x = window.innerWidth / 2, y = window.innerHeight / 2;
-    let tx = x, ty = y;
+    let gx = window.innerWidth / 2, gy = window.innerHeight / 2;
+    let dx = gx, dy = gy;
+    let tx = gx, ty = gy;
     function tick() {
       raf = 0;
-      x += (tx - x) * 0.16;
-      y += (ty - y) * 0.16;
-      g.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
-      if (Math.abs(tx - x) > 0.4 || Math.abs(ty - y) > 0.4) raf = requestAnimationFrame(tick);
+      gx += (tx - gx) * 0.16;
+      gy += (ty - gy) * 0.16;
+      dx += (tx - dx) * 0.35;
+      dy += (ty - dy) * 0.35;
+      if (g) g.style.transform = "translate(" + gx.toFixed(1) + "px," + gy.toFixed(1) + "px)";
+      if (d) d.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+      if (Math.abs(tx - gx) > 0.4 || Math.abs(ty - gy) > 0.4 ||
+          Math.abs(tx - dx) > 0.4 || Math.abs(ty - dy) > 0.4) raf = requestAnimationFrame(tick);
     }
     function onMove(e) {
       tx = e.clientX; ty = e.clientY;
-      g.style.opacity = "1";
+      if (g) g.style.opacity = "1";
+      if (d) d.style.opacity = "1";
       if (!raf) raf = requestAnimationFrame(tick);
     }
-    function onLeave() { g.style.opacity = "0"; }
+    function onLeave() {
+      if (g) g.style.opacity = "0";
+      if (d) d.style.opacity = "0";
+    }
     window.addEventListener("mousemove", onMove);
     document.addEventListener("mouseleave", onLeave);
     return () => {
@@ -181,5 +192,15 @@ function App() {
     </div>
   );
 }
+
+// A thin hairline between major sections, aligned to the content column.
+function SectionRule() {
+  return (
+    <div className="px-7 md:px-20" aria-hidden="true">
+      <hr className="mx-auto w-full max-w-6xl rule-section" />
+    </div>
+  );
+}
+Object.assign(window, { SectionRule });
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

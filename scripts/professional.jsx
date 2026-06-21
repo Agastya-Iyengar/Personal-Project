@@ -79,6 +79,7 @@ function ProfessionalContent() {
         sub="The professional record — capabilities, work, and what comes next."
       />
       <ProOverview />
+      <SectionRule />
       <section className="px-7 pb-32 md:px-20 md:pb-44" data-screen-label="Projects">
         <div className="mx-auto w-full max-w-6xl">
           <p className="eyebrow" data-reveal data-reveal-y="20">Selected work</p>

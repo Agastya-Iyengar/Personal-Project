@@ -76,6 +76,26 @@
     will-change: transform;
   }
 
+  /* Custom cursor dot — small accent dot that trails the pointer with a
+     slight lag. Additive (the native cursor stays for precision). */
+  #cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    will-change: transform;
+  }
+  /* Touch devices have no pointer to follow. */
+  @media (hover: none) { #cursor-dot { display: none; } }
+
   /* Typography system */
   .eyebrow {
     font-size: 13px;
@@ -113,6 +133,8 @@
 
   .rule { height: 1px; width: 100%; background: var(--line); border: 0; }
   .rule-accent { height: 1px; background: var(--accent); opacity: 0.6; border: 0; }
+  /* Section divider: a thin hairline between major sections. */
+  .rule-section { height: 1px; width: 100%; background: rgba(0, 0, 0, 0.12); border: 0; }
 
   .lift { transition: box-shadow .5s ease, transform .5s ease; }
   .lift:hover { box-shadow: var(--shadow-lift); transform: translateY(-2px); }
@@ -211,6 +233,7 @@
   </div>
 </div>
 <div id="cursor-glow" aria-hidden="true"></div>
+<div id="cursor-dot" aria-hidden="true"></div>
 
 <noscript>
   <div style="max-width: 640px; margin: 80px auto; padding: 0 24px;">

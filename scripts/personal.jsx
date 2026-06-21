@@ -117,7 +117,9 @@ function PersonalContent() {
         sub="A personal record — music, study, and the long way round."
       />
       <LakeBand />
+      <SectionRule />
       <About />
+      <SectionRule />
       <Pursuits />
     </React.Fragment>
   );
