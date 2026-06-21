@@ -16,8 +16,8 @@ const MOODS = {
 
 function TopBar({ mode, setMode }) {
   const options = [
-    { id: "personal", label: "Personal" },
     { id: "professional", label: "Professional" },
+    { id: "personal", label: "Personal" },
   ];
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -61,7 +61,7 @@ function App() {
     try { return JSON.parse(localStorage.getItem("agastya-mode") || "null"); }
     catch (e) { return null; }
   })();
-  const [mode, setMode] = React.useState(saved === "professional" ? "professional" : "personal");
+  const [mode, setMode] = React.useState(saved === "personal" ? "personal" : "professional");
 
   // Apply tweaks to CSS variables
   React.useEffect(() => {
