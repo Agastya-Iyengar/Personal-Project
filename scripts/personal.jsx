@@ -119,7 +119,7 @@ function PersonalContent() {
       <LakeBand />
       <SectionRule />
       <About />
-      <SectionRule />
+      <SectionRule className="-mt-12 md:-mt-20" />
       <Pursuits />
     </React.Fragment>
   );

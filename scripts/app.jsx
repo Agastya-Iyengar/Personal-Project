@@ -194,9 +194,10 @@ function App() {
 }
 
 // A thin hairline between major sections, aligned to the content column.
-function SectionRule() {
+// Optional className lets callers nudge spacing for a specific placement.
+function SectionRule({ className = "" }) {
   return (
-    <div className="px-7 md:px-20" aria-hidden="true">
+    <div className={"px-7 md:px-20 " + className} aria-hidden="true">
       <hr className="mx-auto w-full max-w-6xl rule-section" />
     </div>
   );
