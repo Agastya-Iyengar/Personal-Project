@@ -64,8 +64,8 @@ function About() {
           <BlurText as="h2" text="About" className="display mt-5" />
           <p className="lede mt-9" data-reveal data-reveal-y="30">
             Hey! My name is Agastya Iyengar, and I'm a rising junior at Metea Valley
-            High School. I'm really looking forward to meeting you and working on
-            training the predictive algorithm for Project&nbsp;1.
+            High School. I'm really looking forward to meeting you and building
+            the Agent in Project&nbsp;1.
           </p>
           <p className="body-lg mt-7 max-w-[56ch] text-[color:var(--stone)]" data-reveal data-reveal-y="28">
             Away from the desk, I spend quieter evenings refining my technique on
