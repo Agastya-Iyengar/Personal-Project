@@ -22,7 +22,9 @@ function TopBar({ mode, setMode }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-7 py-5 md:px-10">
-        <span className="font-display text-2xl font-semibold tracking-[0.04em] text-[color:var(--ink-deep)]">AI</span>
+        <button type="button" aria-label="Back to top"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="font-display text-2xl font-semibold tracking-[0.04em] text-[color:var(--ink-deep)] transition-opacity hover:opacity-70">AI</button>
 
         <div className="rounded-full p-1.5"
              style={{
