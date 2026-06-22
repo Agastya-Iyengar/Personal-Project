@@ -1,7 +1,7 @@
 // app.jsx — root: top toggle, content swap, scroll reveals, tweaks.
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "accent": "#0d5238",
+  "accent": "#0e6b45",
   "mood": "hermes",
   "textHead": "#0d0d0d",
   "textBody": "#1a1a1a",

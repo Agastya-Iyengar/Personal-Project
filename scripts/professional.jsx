@@ -9,7 +9,7 @@ function ProOverview() {
     ["Currently", "Learning to Drive · AMC Prep"],
   ];
   const skills = [
-    { area: "Quantitative Reasoning", from: "Math Team", detail: "Competition mathematics, proofs, and structured problem-solving." },
+    { area: "Quantitative Reasoning", from: "Math Team", detail: "Competition mathematics, proofs, and structured problem-solving on the competition team, which finished the season ranked 9th." },
     { area: "Public Speaking & Debate", from: "Youth & Government · Model UN", detail: "Assistant Director of Lobbyists for Youth & Government, one of nine statewide (selected from roughly 100). Set the docket order for Special Committee, deciding the sequence in which legislation was heard and debated." },
     { area: "Discipline & Craft", from: "Cello", detail: "Years of deliberate practice, ensemble work, and performance." },
   ];
@@ -66,7 +66,7 @@ function ProjectCard({ eyebrow, title, result, href, cta, children }) {
             {title}
           </h3>
           {result && (
-            <p className="mt-3 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">
+            <p className="mt-3 font-display text-[13px] font-bold uppercase tracking-[0.18em] text-[color:var(--accent)]">
               {result}
             </p>
           )}

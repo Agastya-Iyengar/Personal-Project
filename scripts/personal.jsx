@@ -80,7 +80,7 @@ function About() {
 
 function Pursuits() {
   const rows = [
-    { name: "Math Team", note: "Competition mathematics, proofs, and the occasional very late practice set." },
+    { name: "Math Team", note: "On the competition team, which finished the season ranked 9th. Proofs, problem sets, and the occasional very late practice." },
     { name: "Model UN", note: "Committee debate, position papers, and thinking on my feet." },
     { name: "Youth and Government", note: "A mock legislature: writing bills and arguing for them. Assistant Director of Lobbyists, one of nine statewide." },
     { name: "Cello", note: "Refining technique one étude at a time. Some days it sings; some days it argues back." },
@@ -95,7 +95,7 @@ function Pursuits() {
           {rows.map((r, i) => (
             <div key={r.name} data-reveal data-reveal-y="34">
               <div className="lift group grid grid-cols-1 items-baseline gap-3 rounded-[28px] px-3 py-8 md:grid-cols-[80px_minmax(0,1fr)_minmax(0,2fr)] md:gap-10 md:px-7">
-                <span className="font-display text-lg text-[color:var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-display text-lg font-semibold text-[color:var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="font-display text-[clamp(28px,3.4vw,42px)] font-medium leading-none text-[color:var(--ink-deep)]">{r.name}</h3>
                 <p className="body-lg text-[color:var(--stone)]">{r.note}</p>
               </div>
