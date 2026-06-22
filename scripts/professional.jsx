@@ -55,7 +55,7 @@ function ProOverview() {
   );
 }
 
-function ProjectCard({ eyebrow, title, href, cta, children }) {
+function ProjectCard({ eyebrow, title, result, href, cta, children }) {
   return (
     <div data-reveal data-reveal-y="34">
       <div className="lift grid grid-cols-1 gap-6 rounded-[34px] px-9 py-10 md:grid-cols-[minmax(0,1fr)_auto]"
@@ -65,6 +65,11 @@ function ProjectCard({ eyebrow, title, href, cta, children }) {
           <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)] mt-3">
             {title}
           </h3>
+          {result && (
+            <p className="mt-3 font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-[color:var(--accent)]">
+              {result}
+            </p>
+          )}
           <p className="body-lg mt-4 max-w-[56ch] text-[color:var(--stone)]">{children}</p>
         </div>
         <div className="flex items-end">
@@ -96,19 +101,23 @@ function ProfessionalContent() {
             <ProjectCard
               eyebrow="Policy · TurnUP"
               title="California Proposition 1: Reproductive Rights Analysis"
+              result="Recognized by TurnUP · submitted & presented"
               href="./TurnUP Reproductive rights copy.pdf"
               cta="Read Paper">
               A deep-dive into the 2022 Constitutional Right to Reproductive Freedom amendment:
-              its history, legislative path, voting results, and national aftermath.
+              its history, legislative path, voting results, and national aftermath. Submitted to
+              TurnUP and presented to a group there.
             </ProjectCard>
             <ProjectCard
               eyebrow="Engineering · Team Solaris"
               title="Improving Solar Panel Efficiency"
+              result="2nd place · regionals · 50+ teams"
               href="./SolarProject.pptx"
               cta="View Slides">
               A team engineering project tackling a core limitation of fixed solar panels:
               they face one direction while the sun travels east to west. Researched with
-              input from the Naperville board of electricity.
+              input from the Naperville board of electricity, and placed 2nd of 50+ teams
+              at regionals.
             </ProjectCard>
           </div>
         </div>
