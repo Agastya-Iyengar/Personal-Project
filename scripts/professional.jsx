@@ -10,7 +10,7 @@ function ProOverview() {
   ];
   const skills = [
     { area: "Quantitative Reasoning", from: "Math Team", detail: "Competition mathematics, proofs, and structured problem-solving." },
-    { area: "Public Speaking & Debate", from: "Model UN · Youth and Government", detail: "Committee debate, extemporaneous argument, and policy writing." },
+    { area: "Public Speaking & Debate", from: "Youth & Government · Model UN", detail: "Assistant Director of Lobbyists for Youth & Government, one of nine statewide (selected from roughly 100). Set the docket order for Special Committee, deciding the sequence in which legislation was heard and debated." },
     { area: "Discipline & Craft", from: "Cello", detail: "Years of deliberate practice, ensemble work, and performance." },
   ];
   return (

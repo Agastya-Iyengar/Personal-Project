@@ -82,7 +82,7 @@ function Pursuits() {
   const rows = [
     { name: "Math Team", note: "Competition mathematics, proofs, and the occasional very late practice set." },
     { name: "Model UN", note: "Committee debate, position papers, and thinking on my feet." },
-    { name: "Youth and Government", note: "A mock legislature: writing bills and arguing for them." },
+    { name: "Youth and Government", note: "A mock legislature: writing bills and arguing for them. Assistant Director of Lobbyists, one of nine statewide." },
     { name: "Cello", note: "Refining technique one étude at a time. Some days it sings; some days it argues back." },
   ];
   return (
