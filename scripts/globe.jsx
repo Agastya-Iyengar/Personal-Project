@@ -18,6 +18,9 @@ function GlobeIntro() {
     let rotation = 0;
     let resizeTimer = 0;
     let readyInterval = 0;
+    // Honor the OS "reduce motion" setting: skip the idle auto-spin.
+    const reduceMotion = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Aurora / Chicago area.
     const CHI = [41.85, -87.75];
@@ -55,7 +58,7 @@ function GlobeIntro() {
         onRender: (state) => {
           const p = progRef.current;
           const jp = Math.min(1, p / 0.7);
-          if (p < 0.04) rotation += 0.0035;
+          if (!reduceMotion && p < 0.04) rotation += 0.0035;
           const base = startPhi + rotation;
           state.phi = base + (focus[0] - base) * jp;
           state.theta = startTheta + (focus[1] - startTheta) * jp;

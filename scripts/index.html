@@ -96,6 +96,21 @@
   /* Touch devices have no pointer to follow. */
   @media (hover: none) { #cursor-dot { display: none; } }
 
+  /* Respect the OS "reduce motion" setting: drop the decorative cursors,
+     force animations/transitions to settle instantly, and show all
+     scroll-reveal content in its final (visible) state. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+    #cursor-dot, #cursor-glow { display: none !important; }
+    [data-reveal] { opacity: 1 !important; transform: none !important; }
+    .bt-play .blur-char { opacity: 1 !important; filter: none !important; transform: none !important; }
+  }
+
   /* Typography system */
   .eyebrow {
     font-size: 13px;

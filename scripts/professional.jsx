@@ -55,18 +55,27 @@ function ProOverview() {
   );
 }
 
-function ProPlaceholder({ eyebrow, title, children }) {
+function ProjectCard({ eyebrow, title, href, cta, children }) {
   return (
-    <section className="px-7 pb-32 md:px-20 md:pb-44" data-screen-label={title}>
-      <div className="mx-auto w-full max-w-6xl">
-        <p className="eyebrow" data-reveal data-reveal-y="20">{eyebrow}</p>
-        <BlurText as="h2" text={title} className="display mt-5" />
-        <div className="mt-10 rounded-[34px] px-9 py-16 text-center lift" data-reveal data-reveal-y="34"
-             style={{ boxShadow: "var(--shadow-soft)" }}>
-          <p className="lede mx-auto max-w-[46ch] italic text-[color:var(--stone)]">{children}</p>
+    <div data-reveal data-reveal-y="34">
+      <div className="lift grid grid-cols-1 gap-6 rounded-[34px] px-9 py-10 md:grid-cols-[minmax(0,1fr)_auto]"
+           style={{ boxShadow: "var(--shadow-soft)" }}>
+        <div>
+          <p className="eyebrow text-[11px]">{eyebrow}</p>
+          <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)] mt-3">
+            {title}
+          </h3>
+          <p className="body-lg mt-4 max-w-[56ch] text-[color:var(--stone)]">{children}</p>
+        </div>
+        <div className="flex items-end">
+          <a href={href} target="_blank" rel="noopener"
+             className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-[#fbf8f1] transition-transform hover:-translate-y-0.5"
+             style={{ background: "var(--ink-deep)", whiteSpace: "nowrap" }}>
+            {cta}
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -83,27 +92,24 @@ function ProfessionalContent() {
         <div className="mx-auto w-full max-w-6xl">
           <p className="eyebrow" data-reveal data-reveal-y="20">Selected work</p>
           <BlurText as="h2" text="Projects" className="display mt-5" />
-          <div className="mt-10" data-reveal data-reveal-y="34">
-            <div className="lift grid grid-cols-1 gap-6 rounded-[34px] px-9 py-10 md:grid-cols-[minmax(0,1fr)_auto]"
-                 style={{ boxShadow: "var(--shadow-soft)" }}>
-              <div>
-                <p className="eyebrow text-[11px]">Policy · TurnUP</p>
-                <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)] mt-3">
-                  California Proposition 1: Reproductive Rights Analysis
-                </h3>
-                <p className="body-lg mt-4 max-w-[56ch] text-[color:var(--stone)]">
-                  A deep-dive into the 2022 Constitutional Right to Reproductive Freedom amendment:
-                  its history, legislative path, voting results, and national aftermath.
-                </p>
-              </div>
-              <div className="flex items-end">
-                <a href="./TurnUP Reproductive rights copy.pdf" target="_blank" rel="noopener"
-                   className="inline-flex items-center gap-2 rounded-full px-7 py-3 font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-[#fbf8f1] transition-transform hover:-translate-y-0.5"
-                   style={{ background: "var(--ink-deep)", whiteSpace: "nowrap" }}>
-                  Read Paper
-                </a>
-              </div>
-            </div>
+          <div className="mt-10 flex flex-col gap-6">
+            <ProjectCard
+              eyebrow="Policy · TurnUP"
+              title="California Proposition 1: Reproductive Rights Analysis"
+              href="./TurnUP Reproductive rights copy.pdf"
+              cta="Read Paper">
+              A deep-dive into the 2022 Constitutional Right to Reproductive Freedom amendment:
+              its history, legislative path, voting results, and national aftermath.
+            </ProjectCard>
+            <ProjectCard
+              eyebrow="Engineering · Team Solaris"
+              title="Improving Solar Panel Efficiency"
+              href="./SolarProject.pptx"
+              cta="View Slides">
+              A team engineering project tackling a core limitation of fixed solar panels:
+              they face one direction while the sun travels east to west. Researched with
+              input from the Naperville board of electricity.
+            </ProjectCard>
           </div>
         </div>
       </section>
