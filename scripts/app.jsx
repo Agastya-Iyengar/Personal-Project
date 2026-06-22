@@ -193,15 +193,4 @@ function App() {
   );
 }
 
-// A thin hairline between major sections, aligned to the content column.
-// Optional className lets callers nudge spacing for a specific placement.
-function SectionRule({ className = "" }) {
-  return (
-    <div className={"px-7 md:px-20 " + className} aria-hidden="true">
-      <hr className="mx-auto w-full max-w-6xl rule-section" />
-    </div>
-  );
-}
-Object.assign(window, { SectionRule });
-
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

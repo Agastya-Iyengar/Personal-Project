@@ -32,7 +32,7 @@ function LakeBand() {
           radius="30"
           fit="cover"
           src="./Florence.jpeg"
-          placeholder="Drop a lakefront photo — Lake Como, a view you love"
+          placeholder="Drop a lakefront photo, Lake Como, a view you love"
           class="frame"
           style={{ display: "block", width: "100%", height: "62vh", minHeight: "360px", borderRadius: "30px" }}
         ></image-slot>
@@ -69,7 +69,7 @@ function About() {
           </p>
           <p className="body-lg mt-7 max-w-[56ch] text-[color:var(--stone)]" data-reveal data-reveal-y="28">
             Away from the desk, I spend quieter evenings refining my technique on
-            the cello — slow, deliberate work that balances out the pace of
+            the cello. Slow, deliberate work that balances out the pace of
             everything else.
           </p>
         </div>
@@ -82,7 +82,7 @@ function Pursuits() {
   const rows = [
     { name: "Math Team", note: "Competition mathematics, proofs, and the occasional very late practice set." },
     { name: "Model UN", note: "Committee debate, position papers, and thinking on my feet." },
-    { name: "Youth and Government", note: "A mock legislature — writing bills and arguing for them." },
+    { name: "Youth and Government", note: "A mock legislature: writing bills and arguing for them." },
     { name: "Cello", note: "Refining technique one étude at a time. Some days it sings; some days it argues back." },
   ];
   return (
@@ -117,9 +117,7 @@ function PersonalContent() {
         sub="Math, policy, and code: arm in arm, they produce a charm."
       />
       <LakeBand />
-      <SectionRule />
       <About />
-      <SectionRule className="-mt-12 md:-mt-20" />
       <Pursuits />
     </React.Fragment>
   );

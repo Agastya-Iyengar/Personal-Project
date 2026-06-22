@@ -20,7 +20,7 @@ function ProOverview() {
         <BlurText as="h2" text="Overview & Skills" className="display mt-5 max-w-[16ch]" />
         <p className="lede mt-9 max-w-[46ch]" data-reveal data-reveal-y="28">
           A rising junior at Metea Valley with interests across mathematics,
-          debate, and policy — looking to build the Agent in Project&nbsp;1.
+          debate, and policy, now looking to build the Agent in Project&nbsp;1.
         </p>
 
         <div className="mt-16 grid gap-px overflow-hidden rounded-[28px] sm:grid-cols-3" data-reveal data-reveal-y="34"
@@ -79,7 +79,6 @@ function ProfessionalContent() {
         sub="Math, policy, and code: arm in arm, they produce a charm."
       />
       <ProOverview />
-      <SectionRule />
       <section className="px-7 pb-32 md:px-20 md:pb-44" data-screen-label="Projects">
         <div className="mx-auto w-full max-w-6xl">
           <p className="eyebrow" data-reveal data-reveal-y="20">Selected work</p>
@@ -90,7 +89,7 @@ function ProfessionalContent() {
               <div>
                 <p className="eyebrow text-[11px]">Policy · TurnUP</p>
                 <h3 className="font-display text-[clamp(26px,3vw,38px)] font-medium leading-tight text-[color:var(--ink-deep)] mt-3">
-                  California Proposition 1 — Reproductive Rights Analysis
+                  California Proposition 1: Reproductive Rights Analysis
                 </h3>
                 <p className="body-lg mt-4 max-w-[56ch] text-[color:var(--stone)]">
                   A deep-dive into the 2022 Constitutional Right to Reproductive Freedom amendment:

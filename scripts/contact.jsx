@@ -118,7 +118,7 @@ function MessageModal({ onClose }) {
             <p className="eyebrow">Say hello</p>
             <h3 className="display mt-3" style={{ fontSize: "clamp(34px,5vw,52px)" }}>Send a message</h3>
             <p className="body-lg mt-3 text-[color:var(--stone)]">
-              A note, a question, an introduction — it all reaches me.
+              A note, a question, an introduction. It all reaches me.
             </p>
 
             <form className="mt-8 flex flex-col gap-7" onSubmit={submit} noValidate>
@@ -154,8 +154,8 @@ function MessageModal({ onClose }) {
             <p className="eyebrow">Received</p>
             <h3 className="display mt-4" style={{ fontSize: "clamp(32px,5vw,48px)" }}>Thank you, {form.name.split(" ")[0]}.</h3>
             <p className="lede mt-5 text-[color:var(--stone)]">
-              Your message is noted — I'll be in touch. In the meantime, find me on
-              Instagram or TikTok below.
+              Your message is noted. I'll be in touch. In the meantime, find me on
+              Instagram below.
             </p>
             <button type="button" onClick={onClose}
                     className="mt-9 rounded-full px-8 py-3 font-display text-lg font-semibold uppercase tracking-[0.18em] text-[#fbf8f1] transition-transform hover:-translate-y-0.5"
